@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Психолог Олександр Гевко — онлайн-консультації | КПТ</title>
+<meta name="description" content="Олександр Гевко — психолог, спеціаліст із КПТ терапії, тривожних розладів та емоційного вигоряння. Онлайн-консультації українською.">
+<meta property="og:title" content="Психолог Олександр Гевко — онлайн-консультації | КПТ">
+<meta property="og:description" content="Олександр Гевко — психолог, спеціаліст із КПТ терапії, тривожних розладів та емоційного вигоряння.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="uk_UA">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23A3D5E0' rx='18' width='100' height='100'/><text x='50' y='68' font-size='48' font-family='serif' fill='%231A1A1A' text-anchor='middle'>ОГ</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#E8E8E8;--bg-alt:#D4D4D4;--accent:#A3D5E0;--accent-text:#5A9DAB;
+  --text:#1A1A1A;--text-secondary:#3D3D3D;
+  --font-heading:'DM Serif Display',serif;
+  --font-body:'Inter',sans-serif;
+  --font-sig:'Caveat',cursive;
+  --nav-h:60px;--section-py:5rem;
+  --max-w:1100px;--radius:10px;
+}
+@media(prefers-color-scheme:dark){
+  :root{--bg:#1A1A1A;--bg-alt:#2A2A2A;--accent:#7BBFCC;--accent-text:#7BBFCC;--text:#E8E8E8;--text-secondary:#AAAAAA}
+}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
+body{font-family:var(--font-body);color:var(--text);background:var(--bg);line-height:1.7;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--accent-text);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--accent-text);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--font-heading);font-weight:400;line-height:1.2}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 1.25rem}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;width:100%;height:var(--nav-h);z-index:100;
+  background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  transition:box-shadow .3s}
+.nav.scrolled{box-shadow:0 1px 12px rgba(0,0,0,.1)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:100%}
+.nav-logo{font-family:var(--font-heading);font-size:1.15rem;color:var(--text);white-space:nowrap}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:var(--text-secondary);font-size:.85rem;font-weight:500;letter-spacing:.02em;transition:color .2s}
+.nav-links a:hover{color:var(--text);text-decoration:none}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:10px}
+.burger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s,opacity .3s}
+.burger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.active span:nth-child(2){opacity:0}
+.burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media(max-width:639px){
+  .burger{display:flex}
+  .nav-links{position:fixed;top:var(--nav-h);left:0;width:100%;flex-direction:column;
+    background:var(--bg);padding:1.5rem;gap:.75rem;max-height:calc(100vh - var(--nav-h));overflow-y:auto;
+    transform:translateY(-120%);transition:transform .3s;border-bottom:1px solid var(--bg-alt)}
+  .nav-links.open{transform:translateY(0)}
+}
+
+/* ── HERO ── */
+.hero{min-height:100vh;min-height:100dvh;display:flex;align-items:center;padding-top:calc(var(--nav-h) + 2rem);padding-bottom:2rem}
+.hero .wrap{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
+.hero-text{order:2}
+.hero-photo{order:1;justify-self:center}
+.hero-photo img{width:260px;height:260px;object-fit:cover;border-radius:50%;border:3px solid var(--accent)}
+.hero-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+.hero-tag{font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:.3rem .7rem;border-radius:20px;background:var(--bg-alt);color:var(--text-secondary)}
+.hero h1{font-size:2rem;margin-bottom:.5rem}
+.hero-subtitle{font-size:1rem;color:var(--text-secondary);margin-bottom:1rem}
+.hero-sig{font-family:var(--font-sig);font-size:2rem;color:var(--accent-text)}
+.hero-cta{display:inline-block;margin-top:1.5rem;padding:.75rem 2rem;background:var(--accent);color:#1A1A1A;
+  border-radius:var(--radius);font-weight:600;font-size:.9rem;transition:opacity .2s}
+.hero-cta:hover{opacity:.85;text-decoration:none}
+
+@media(min-width:640px){
+  .hero .wrap{grid-template-columns:1fr 1fr}
+  .hero-text{order:1}.hero-photo{order:2;justify-self:end}
+  .hero-photo img{width:320px;height:320px}
+  .hero h1{font-size:2.5rem}
+}
+@media(min-width:900px){
+  .hero-photo img{width:380px;height:380px}
+  .hero h1{font-size:2.8rem}
+}
+
+
+/* ── QUOTE ── */
+.quote-section{padding:var(--section-py) 0;text-align:center}
+.quote-section blockquote{font-family:var(--font-heading);font-size:1.3rem;max-width:700px;margin:0 auto;
+  color:var(--text);line-height:1.6;position:relative;padding:0 1.5rem}
+.quote-section blockquote::before{content:'\201C';font-size:4rem;color:var(--accent-text);position:absolute;top:-.5rem;left:0;line-height:1}
+.quote-section figcaption{display:block;margin-top:1rem;font-size:.85rem;color:var(--text-secondary);font-style:normal}
+.quote-section figure{margin:0}
+
+/* ── SECTIONS ── */
+section{padding:var(--section-py) 0}
+.bg-alt{background:var(--bg-alt)}
+.section-title{font-size:1.8rem;text-align:center;margin-bottom:2.5rem}
+
+/* ── HELP CARDS ── */
+.help-grid{display:grid;gap:1.25rem;grid-template-columns:1fr}
+.help-card{background:var(--bg);padding:1.25rem 1.25rem 1.25rem 1.5rem;border-radius:var(--radius);
+  border-left:3px solid var(--accent);box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.help-card h3{font-size:1.05rem;margin-bottom:.35rem}
+.help-card p{font-size:.88rem;color:var(--text-secondary)}
+.help-card svg{width:36px;height:36px;margin-bottom:.6rem;stroke:var(--accent-text);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+@media(min-width:640px){.help-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.help-grid{grid-template-columns:1fr 1fr 1fr}}
+
+/* ── ACCORDIONS ── */
+.accordion{max-width:750px;margin:0 auto}
+.accordion-item{border-bottom:1px solid var(--bg-alt);overflow:hidden}
+.accordion-header{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;
+  align-items:center;padding:1rem 0;font-family:var(--font-heading);font-size:1.1rem;color:var(--text);text-align:left}
+.accordion-header::after{content:'+';font-size:1.4rem;color:var(--accent-text);transition:transform .3s;flex-shrink:0;margin-left:1rem}
+.accordion-item.active .accordion-header::after{transform:rotate(45deg)}
+.accordion-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.accordion-body-inner{padding:0 0 1.25rem;font-size:.9rem;color:var(--text-secondary);line-height:1.8}
+.accordion-body-inner ul{padding-left:1.25rem;margin-top:.5rem}
+.accordion-body-inner li{margin-bottom:.25rem}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;gap:2.5rem;grid-template-columns:1fr;align-items:start}
+.about-text{font-size:.92rem;color:var(--text-secondary);line-height:1.8}
+.about-text p{margin-bottom:1rem}
+.about-photo img{border-radius:var(--radius);width:100%;max-width:380px;margin:0 auto}
+@media(min-width:640px){.about-grid{grid-template-columns:1fr 280px}}
+@media(min-width:900px){.about-grid{grid-template-columns:1fr 340px}}
+
+/* ── GALLERY ── */
+.gallery-grid{display:grid;gap:1.5rem;grid-template-columns:1fr}
+.gallery-item{cursor:pointer;overflow:hidden;border-radius:var(--radius);
+  background:var(--bg-alt);transition:box-shadow .3s}
+.gallery-item:hover{box-shadow:0 4px 20px rgba(0,0,0,.12)}
+.gallery-item img{width:100%;aspect-ratio:4/3;object-fit:contain;
+  display:block;transition:transform .3s;padding:.5rem}
+.gallery-item:hover img{transform:scale(1.03)}
+.gallery-caption{padding:.5rem 1rem .75rem;font-size:.82rem;
+  color:var(--text-secondary);text-align:center;line-height:1.4}
+@media(min-width:640px){
+  .gallery-grid{grid-template-columns:repeat(4,1fr)}
+  .gallery-item{grid-column:span 2}
+  .gallery-item:nth-child(5){grid-column:2/span 2}
+}
+@media(min-width:900px){
+  .gallery-grid{grid-template-columns:repeat(6,1fr)}
+  .gallery-item{grid-column:span 2}
+  .gallery-item:nth-child(4){grid-column:2/span 2}
+  .gallery-item:nth-child(5){grid-column:4/span 2}
+}
+
+/* ── LIGHTBOX ── */
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;flex-direction:column}
+.lightbox.active{display:flex}
+.lightbox img{max-width:90vw;max-height:80vh;border-radius:4px;object-fit:contain}
+.lightbox-caption{color:#ccc;font-size:.85rem;margin-top:.75rem;text-align:center;max-width:90vw}
+.lightbox-close,.lightbox-prev,.lightbox-next{position:absolute;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;
+  padding:.5rem;line-height:1;opacity:.7;transition:opacity .2s}
+.lightbox-close:hover,.lightbox-prev:hover,.lightbox-next:hover{opacity:1}
+.lightbox-close{top:1rem;right:1.5rem;font-size:2.2rem}
+.lightbox-prev{left:1rem;top:50%;transform:translateY(-50%)}
+.lightbox-next{right:1rem;top:50%;transform:translateY(-50%)}
+
+/* ── PRICING ── */
+.pricing-card{max-width:420px;margin:0 auto;background:var(--bg);border-radius:var(--radius);
+  padding:2.5rem 2rem;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.07);border-top:3px solid var(--accent)}
+.pricing-amount{font-family:var(--font-heading);font-size:2.8rem;color:var(--text);margin:.75rem 0 .25rem}
+.pricing-unit{font-size:.9rem;color:var(--text-secondary)}
+.pricing-detail{margin-top:1rem;font-size:.88rem;color:var(--text-secondary)}
+.pricing-badge{display:inline-block;margin-top:1rem;padding:.35rem 1rem;border-radius:20px;
+  background:var(--accent);color:#1A1A1A;font-size:.82rem;font-weight:600}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;gap:2.5rem;grid-template-columns:1fr}
+@media(min-width:640px){.contact-grid{grid-template-columns:1fr 1fr}}
+.contact-form{display:flex;flex-direction:column;gap:.85rem}
+.contact-form label{font-size:.8rem;font-weight:500;color:var(--text-secondary);margin-bottom:.15rem}
+.contact-form input,.contact-form textarea{width:100%;padding:.7rem .85rem;border:1px solid var(--bg-alt);
+  border-radius:var(--radius);background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:.9rem;
+  transition:border-color .2s}
+.contact-form input:focus,.contact-form textarea:focus{outline:2px solid var(--accent-text);outline-offset:2px;border-color:var(--accent)}
+.contact-form textarea{min-height:110px;resize:vertical}
+.contact-form button{padding:.75rem 2rem;background:var(--accent);color:#1A1A1A;border:none;
+  border-radius:var(--radius);font-weight:600;font-size:.9rem;cursor:pointer;transition:opacity .2s;
+  font-family:var(--font-body)}
+.contact-form button:hover{opacity:.85}
+.contact-info{display:flex;flex-direction:column;gap:1.25rem;justify-content:center}
+.contact-link{display:flex;align-items:center;gap:.75rem;font-size:.92rem;color:var(--text)}
+.contact-link svg{width:22px;height:22px;flex-shrink:0;fill:var(--accent)}
+
+/* ── FOOTER ── */
+footer{background:var(--bg-alt);padding:2rem 0;text-align:center}
+footer .socials{display:flex;justify-content:center;gap:1.25rem;margin-bottom:.75rem}
+footer .socials a{display:flex;align-items:center;justify-content:center;width:44px;height:44px;
+  border-radius:50%;background:var(--bg);transition:background .2s}
+footer .socials a:hover{background:var(--accent)}
+footer .socials svg{width:18px;height:18px;fill:var(--text)}
+footer .socials a:hover svg{fill:var(--bg)}
+footer p{font-size:.82rem;color:var(--text-secondary)}
+
+/* ── FADE-IN ── */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.fade-in{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav" aria-label="Головна навігація">
+  <div class="wrap">
+    <a href="#hero" class="nav-logo">Олександр Гевко</a>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="#help">Допомога</a></li>
+      <li><a href="#about">Про мене</a></li>
+      <li><a href="#method">Як я працюю</a></li>
+      <li><a href="#certificates">Сертифікати</a></li>
+      <li><a href="#pricing">Вартість</a></li>
+      <li><a href="#contact">Контакти</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <div class="hero-tags">
+        <span class="hero-tag">КПТ Психолог</span>
+        <span class="hero-tag">НПУ ім. Драгоманова, 2025</span>
+        <span class="hero-tag">УІКПТ · 2021</span>
+      </div>
+      <h1>Психолог, який розуміє</h1>
+      <p class="hero-subtitle">Когнітивно-поведінкова терапія, робота з тривогою, вигорянням та емоціями. Онлайн-консультації українською.</p>
+      <span class="hero-sig">Oleksandr Hevko</span>
+      <br>
+      <a href="#contact" class="hero-cta">Записатися на консультацію</a>
+    </div>
+    <div class="hero-photo">
+      <img src="assets/photo-portrait.webp" alt="Олександр Гевко — психолог" width="380" height="380">
+    </div>
+  </div>
+</section>
+
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <div class="wrap fade-in">
+    <figure>
+      <blockquote>
+        Між стимулом і реакцією є простір. У цьому просторі — наша свобода і сила обирати свою реакцію. У нашій реакції — наш розвиток і наша свобода.
+      </blockquote>
+      <figcaption>— Віктор Франкл</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- HELP -->
+<section id="help" class="bg-alt">
+  <div class="wrap">
+    <h2 class="section-title fade-in">Я можу вам допомогти</h2>
+    <div class="help-grid">
+      <div class="help-card fade-in">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="5"/><circle cx="18" cy="18" r="10" opacity=".6"/><circle cx="18" cy="18" r="15" opacity=".3"/></svg>
+        <h3>Тривога та панічні атаки</h3>
+        <p>Зменшення інтенсивності тривожних станів, робота з паніками та фобіями через доказові техніки КПТ.</p>
+      </div>
+      <div class="help-card fade-in">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="14"/><polyline points="18 8 18 18 24 24"/></svg>
+        <h3>Стрес та напруга</h3>
+        <p>Зниження рівня стресу, відновлення внутрішнього балансу та розвиток навичок саморегуляції у складних життєвих обставинах.</p>
+      </div>
+      <div class="help-card fade-in">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><rect x="10" y="6" width="16" height="26" rx="3"/><line x1="14" y1="24" x2="22" y2="24"/><line x1="18" y1="10" x2="18" y2="18"/><line x1="14" y1="14" x2="22" y2="14"/></svg>
+        <h3>Емоційне вигоряння</h3>
+        <p>Відновлення ресурсного стану, профілактика вигоряння для тих, хто працює у стресових умовах.</p>
+      </div>
+      <div class="help-card fade-in">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><path d="M6 20a12 8 0 0 1 24 0" fill="none"/><line x1="13" y1="24" x2="13" y2="28"/><line x1="18" y1="25" x2="18" y2="30"/><line x1="23" y1="24" x2="23" y2="28"/></svg>
+        <h3>Депресія та апатія</h3>
+        <p>Повернення до активного та осмисленого життя через поступові кроки та зміну паттернів мислення.</p>
+      </div>
+      <div class="help-card fade-in">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><polygon points="18 4 21.5 13 31 13 23.5 19 26 29 18 23 10 29 12.5 19 5 13 14.5 13"/></svg>
+        <h3>Самооцінка та самореалізація</h3>
+        <p>Робота з внутрішнім критиком, розвиток впевненості та побудова автентичного шляху розвитку.</p>
+      </div>
+      <div class="help-card fade-in">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><path d="M4 24V12a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4H10l-6 4z"/><path d="M14 22h8a4 4 0 0 0 4-4v-6a4 4 0 0 0-4-4" opacity="0"/><path d="M22 14h4a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-2v4l-6-4h-4a4 4 0 0 1-4-4v-2"/></svg>
+        <h3>Стосунки та комунікація</h3>
+        <p>Покращення стосунків з оточенням, встановлення здорових кордонів та ефективна комунікація.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <h2 class="section-title fade-in">Про мене</h2>
+    <div class="about-grid fade-in">
+      <div class="about-text">
+        <p>Привіт! Я — Олександр, психолог і спеціаліст із когнітивно-поведінкової терапії. Працюю з тривогою, вигорянням, складними емоціями та стосунками.</p>
+        <p>Сам проходжу терапію та супервізію — це важливо для якісної роботи.</p>
+        <p>У практиці поєдную доказові методи КПТ з тілесно-орієнтованими техніками. Вірю, що кожна людина має ресурси для змін — іноді потрібен лише провідник, який допоможе їх побачити. Працюю онлайн українською.</p>
+        <p><strong>Освіта та сертифікації:</strong></p>
+        <ul>
+          <li>2023 — Бакалавр клінічної психології — МАУП</li>
+          <li>2021 — КПТ+. Базові техніки КПТ — УІКПТ</li>
+          <li>2022 — КПТ коупінг з викликами війни — УІКПТ</li>
+          <li>2024 — Профілактика професійного вигоряння — МОМ/USAID</li>
+          <li>2025 — Магістр психології консультування з відзнакою — НПУ ім.&nbsp;Драгоманова</li>
+        </ul>
+      </div>
+      <div class="about-photo">
+        <img src="assets/photo-portrait.webp" alt="Олександр Гевко" loading="lazy" width="340" height="340">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section id="method" class="bg-alt">
+  <div class="wrap">
+    <h2 class="section-title fade-in">Як я працюю</h2>
+    <div class="accordion fade-in" data-accordion-group="method">
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false" aria-controls="method-1" id="method-btn-1">Когнітивно-поведінкова терапія (КПТ)</button>
+        <div class="accordion-body" id="method-1" role="region" aria-labelledby="method-btn-1"><div class="accordion-body-inner">
+          <p>КПТ — це науково обґрунтований підхід, що допомагає виявити та змінити негативні паттерни мислення та поведінки. Це один із найбільш досліджених та ефективних методів сучасної психотерапії.</p>
+          <p>На сесіях ми разом:</p>
+          <ul>
+            <li>Визначаємо конкретні цілі та очікування від терапії</li>
+            <li>Виявляємо автоматичні думки, що підтримують проблему</li>
+            <li>Навчаємося перевіряти ці думки на реалістичність</li>
+            <li>Розробляємо нові, більш адаптивні стратегії мислення</li>
+            <li>Практикуємо нові навички через домашні завдання між сесіями</li>
+          </ul>
+          <p>Зазвичай КПТ є короткостроковою терапією — помітні результати часто з'являються вже після 8–16 сесій.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates">
+  <div class="wrap">
+    <h2 class="section-title fade-in">Освіта та сертифікати</h2>
+    <div class="gallery-grid fade-in" id="gallery">
+      <div class="gallery-item" tabindex="0" role="button" data-index="0">
+        <img src="assets/diploma-bachelor.webp" alt="Диплом бакалавра клінічної психології — МАУП, 2021" loading="lazy">
+        <p class="gallery-caption">Бакалавр клінічної психології — МАУП, 2023</p>
+      </div>
+      <div class="gallery-item" tabindex="0" role="button" data-index="1">
+        <img src="assets/cert-cbt-basic.webp" alt="Сертифікат КПТ+ Базові техніки КПТ — УІКПТ, 2021" loading="lazy">
+        <p class="gallery-caption">КПТ+. Базові техніки КПТ — УІКПТ, 2021</p>
+      </div>
+      <div class="gallery-item" tabindex="0" role="button" data-index="2">
+        <img src="assets/cert-cbt-war.webp" alt="Сертифікат КПТ коупінг з викликами війни — УІКПТ, 2022" loading="lazy">
+        <p class="gallery-caption">КПТ коупінг з викликами війни — УІКПТ, 2022</p>
+      </div>
+      <div class="gallery-item" tabindex="0" role="button" data-index="3">
+        <img src="assets/cert-mom-usaid.webp" alt="Сертифікат Профілактика вигоряння — МОМ/USAID, 2024" loading="lazy">
+        <p class="gallery-caption">Профілактика вигоряння — МОМ/USAID, 2024</p>
+      </div>
+      <div class="gallery-item" tabindex="0" role="button" data-index="4">
+        <img src="assets/diploma-masters.webp" alt="Диплом магістра психології — НПУ Драгоманова, 2025" loading="lazy">
+        <p class="gallery-caption">Магістр психології консультування з відзнакою — НПУ Драгоманова, 2025</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Перегляд зображення">
+  <button class="lightbox-close" aria-label="Закрити">&times;</button>
+  <button class="lightbox-prev" aria-label="Попереднє">&#8249;</button>
+  <button class="lightbox-next" aria-label="Наступне">&#8250;</button>
+  <img alt="">
+  <p class="lightbox-caption"></p>
+</div>
+
+<!-- PRICING -->
+<section id="pricing" class="bg-alt">
+  <div class="wrap">
+    <h2 class="section-title fade-in">Послуги та вартість</h2>
+    <div class="pricing-card fade-in">
+      <p class="pricing-unit">Індивідуальна консультація</p>
+      <p class="pricing-amount">700 грн</p>
+      <p class="pricing-unit">60 хвилин</p>
+      <p class="pricing-detail">Онлайн-сесія через Zoom або Google Meet. Можливість обрати зручний час, включаючи вечірні години.</p>
+      <span class="pricing-badge">Онлайн</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <h2 class="section-title fade-in">Контакти</h2>
+    <div class="contact-grid fade-in">
+      <form class="contact-form" id="contactForm">
+        <div>
+          <label for="fname">Ім'я</label>
+          <input type="text" id="fname" name="fname" required autocomplete="given-name">
+        </div>
+        <div>
+          <label for="lname">Прізвище</label>
+          <input type="text" id="lname" name="lname" required autocomplete="family-name">
+        </div>
+        <div>
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel">
+        </div>
+        <div>
+          <label for="message">Опишіть коротко, з чим ви хотіли б попрацювати</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+        <button type="submit">Написати в Telegram</button>
+      </form>
+      <div class="contact-info">
+        <a href="https://t.me/multiverse_0" target="_blank" rel="noopener" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Telegram @multiverse_0
+        </a>
+        <a href="https://instagram.com/oleksandr.hevko" target="_blank" rel="noopener" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          Instagram @oleksandr.hevko
+        </a>
+        <a href="viber://chat?number=%2B380950705709" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M11.4 0C9.473.028 5.333.344 3.02 2.467 1.302 4.187.537 6.864.378 10.203c-.158 3.34-.11 9.603 5.882 11.213h.005l-.003 2.563s-.04.982.627 1.182c.808.243 1.282-.52 2.055-1.352.425-.455.998-1.121 1.44-1.635 3.964.334 7.013-.43 7.364-.547.81-.271 5.39-.85 6.137-6.94.77-6.28-.367-10.244-2.39-12.038l-.006-.004C20.32 1.593 17.17.207 13.198.031c0 0-.475-.04-1.798-.031zm.136 1.902c1.128-.013 1.534.027 1.534.027 3.436.152 6.22 1.312 7.197 2.196 1.727 1.533 2.741 5.074 2.07 10.537-.636 5.18-4.483 5.573-5.17 5.803-.292.098-2.956.762-6.343.564 0 0-2.512 3.03-3.296 3.822-.122.13-.269.18-.365.156-.135-.034-.172-.199-.17-.44l.023-4.157c-.004-.002-.008-.002-.012-.004-5.15-1.382-4.843-6.762-4.713-9.648.13-2.886.783-5.203 2.244-6.718C6.084 2.558 8.64 1.57 11.536 1.902z"/><path d="M11.876 4.18c-.345 0-.345.537 0 .54 2.827.08 5.089 1.844 5.089 5.309.003.346.537.341.537 0-.003-3.762-2.495-5.77-5.626-5.849z"/><path d="M14.59 9.741c.348 0 .348-.537 0-.54-.897-.036-1.238-.63-1.282-1.388-.007-.346-.537-.341-.537 0 .052.978.509 1.882 1.819 1.928z"/><path d="M16.18 9.515c.003-.346-.534-.346-.537 0-.044 1.418-.896 2.2-2.163 2.243-.345.01-.34.547.005.537 1.574-.053 2.648-1.099 2.695-2.78z"/><path d="M17.276 9.823c.003.346.54.341.537-.005-.03-2.26-1.314-3.7-3.548-3.745-.348-.006-.348.531 0 .537 1.937.04 2.978 1.234 3.011 3.213z"/><path d="M14.158 12.862l-.753-.522c-.256-.176-.592-.147-.81.065l-.31.31c-.247.226-.61.199-.61.199-2.105-.575-2.701-2.702-2.701-2.702s-.027-.363.199-.61l.31-.31c.211-.218.241-.553.065-.81l-.522-.753c-.178-.254-.526-.325-.79-.14 0 0-.624.398-1.058.826-.362.444-.28 1.04-.28 1.04.65 3.012 3.288 5.337 3.288 5.337s2.325 2.638 5.337 3.288c0 0 .595.082 1.04-.28.428-.434.826-1.058.826-1.058.185-.264.114-.612-.14-.79z"/></svg>
+          Viber / +380 95 070 57 09
+        </a>
+        <a href="tel:+380950705709" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1.003 1.003 0 0 1 1.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25 1.02l-2.2 2.2z"/></svg>
+          +380 95 070 57 09
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="socials">
+      <a href="https://t.me/multiverse_0" target="_blank" rel="noopener" aria-label="Telegram">
+        <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+      </a>
+      <a href="https://instagram.com/oleksandr.hevko" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+      </a>
+    </div>
+    <p>&copy; 2026 Олександр Гевко. Усі права захищено.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ── Burger ── */
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    burger.classList.toggle('active');
+    burger.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      burger.classList.remove('active');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* ── Nav scroll shadow ── */
+  const nav = document.getElementById('nav');
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        nav.classList.toggle('scrolled', window.scrollY > 10);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  /* ── Fade-in (IntersectionObserver) ── */
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReduced) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  } else {
+    document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+  }
+
+  /* ── Accordions ── */
+  document.querySelectorAll('.accordion').forEach(group => {
+    group.querySelectorAll('.accordion-header').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isActive = item.classList.contains('active');
+        // Close siblings
+        group.querySelectorAll('.accordion-item.active').forEach(open => {
+          open.classList.remove('active');
+          open.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+          open.querySelector('.accordion-body').style.maxHeight = null;
+        });
+        if (!isActive) {
+          item.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+          const body = item.querySelector('.accordion-body');
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
+      });
+    });
+  });
+
+  /* ── Lightbox ── */
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = lightbox.querySelector('img');
+  const lbCaption = lightbox.querySelector('.lightbox-caption');
+  const gallery = document.getElementById('gallery');
+  const items = gallery.querySelectorAll('.gallery-item');
+  let currentIdx = 0;
+  let lastFocused = null;
+
+  function openLightbox(idx) {
+    currentIdx = idx;
+    const item = items[idx];
+    lbImg.alt = item.querySelector('img').alt;
+    lbImg.src = item.querySelector('img').src;
+    lbCaption.textContent = item.querySelector('.gallery-caption').textContent;
+    lastFocused = document.activeElement;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    lightbox.querySelector('.lightbox-close').focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+
+  function showSlide(idx) {
+    currentIdx = ((idx % items.length) + items.length) % items.length;
+    const item = items[currentIdx];
+    lbImg.src = item.querySelector('img').src;
+    lbImg.alt = item.querySelector('img').alt;
+    lbCaption.textContent = item.querySelector('.gallery-caption').textContent;
+  }
+
+  items.forEach((item, i) => {
+    item.addEventListener('click', () => openLightbox(i));
+    item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i); } });
+  });
+
+  lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+  lightbox.querySelector('.lightbox-prev').addEventListener('click', () => showSlide(currentIdx - 1));
+  lightbox.querySelector('.lightbox-next').addEventListener('click', () => showSlide(currentIdx + 1));
+
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showSlide(currentIdx - 1);
+    if (e.key === 'ArrowRight') showSlide(currentIdx + 1);
+    // Focus trap
+    if (e.key === 'Tab') {
+      const focusable = lightbox.querySelectorAll('button');
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  // Touch swipe
+  let touchStartX = 0;
+  lightbox.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  lightbox.addEventListener('touchend', e => {
+    const diff = e.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) showSlide(currentIdx - 1); else showSlide(currentIdx + 1);
+    }
+  });
+
+  /* ── Contact form → Telegram ── */
+  document.getElementById('contactForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = e.target;
+    const fname = f.fname.value.trim();
+    const lname = f.lname.value.trim();
+    const phone = f.phone.value.trim();
+    const msg = f.message.value.trim();
+    let text = 'Привіт! Мене звати ' + fname + ' ' + lname + '.';
+    if (phone) text += '\nТелефон: ' + phone;
+    if (msg) text += '\n\n' + msg;
+    text += '\n\nХочу записатися на консультацію.';
+    const url = 'https://t.me/multiverse_0?text=' + encodeURIComponent(text);
+    const win = window.open(url, '_blank');
+    if (!win) window.location.href = url;
+  });
+
+})();
+</script>
+</body>
+</html>
