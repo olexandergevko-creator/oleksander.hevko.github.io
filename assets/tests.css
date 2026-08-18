@@ -34,21 +34,12 @@ button,input{font:inherit}
 .burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 .tests-hero{padding:calc(var(--nav-h) + 5.5rem) 0 4.5rem}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:4rem;align-items:center}
 .eyebrow{display:inline-flex;align-items:center;gap:.55rem;margin-bottom:1rem;font-size:.76rem;font-weight:700;
   letter-spacing:.09em;text-transform:uppercase;color:var(--text-secondary)}
 .eyebrow::before{content:'';width:28px;height:2px;background:var(--accent-text)}
 h1,h2,h3{font-family:var(--font-heading);font-weight:400;line-height:1.15}
 h1{max-width:700px;font-size:clamp(2.5rem,6vw,4.75rem);letter-spacing:-.025em}
 .hero-copy{max-width:660px;margin-top:1.25rem;font-size:1.05rem;color:var(--text-secondary)}
-.privacy-card{position:relative;padding:1.75rem;border:1px solid var(--line);border-radius:20px;background:var(--surface);
-  box-shadow:0 20px 60px rgba(34,65,70,.1)}
-.privacy-card::before{content:'';position:absolute;inset:10px -10px -10px 10px;border-radius:20px;
-  background:color-mix(in srgb,var(--accent) 36%,transparent);z-index:-1}
-.privacy-mark{display:grid;place-items:center;width:46px;height:46px;margin-bottom:1rem;border-radius:50%;
-  background:var(--accent);color:#1A1A1A;font-weight:800;font-size:1.15rem}
-.privacy-card h2{font-size:1.35rem;margin-bottom:.55rem}
-.privacy-card p{font-size:.88rem;color:var(--text-secondary)}
 
 .tests-main{padding-bottom:5rem}
 .catalog-heading{max-width:700px;margin-bottom:1.5rem}
@@ -161,7 +152,6 @@ h1{max-width:700px;font-size:clamp(2.5rem,6vw,4.75rem);letter-spacing:-.025em}
     transform:translateY(-120%);transition:transform .25s}
   .nav-links.open{transform:translateY(0)}
   .nav-links a{display:block;padding:.65rem}
-  .hero-grid{grid-template-columns:1fr;gap:2rem}
   .tests-hero{padding-top:calc(var(--nav-h) + 4rem)}
   .test-card{grid-template-columns:1fr}
   .test-card .primary-button{width:100%}
