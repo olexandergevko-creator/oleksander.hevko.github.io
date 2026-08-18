@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GP-CORE — психологічний тест</title>
+<meta name="description" content="Український онлайн-опитувальник GP-CORE про психологічний стан протягом останнього тижня.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23A3D5E0' rx='18' width='100' height='100'/><text x='50' y='68' font-size='48' font-family='serif' fill='%231A1A1A' text-anchor='middle'>ОГ</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tests.css">
+</head>
+<body class="assessment-body">
+
+<nav class="assessment-nav" aria-label="Навігація тесту">
+  <div class="assessment-wrap">
+    <div class="assessment-nav-actions">
+      <a class="back-link" href="tests.html">← До тестів</a>
+      <a class="home-link" href="index.html">На головну</a>
+    </div>
+    <span class="assessment-name">GP-CORE</span>
+  </div>
+</nav>
+
+<main class="assessment-main">
+  <div class="assessment-wrap">
+    <section class="test-shell" id="gpCoreTest" aria-labelledby="gpTestTitle">
+      <div class="test-header">
+        <div>
+          <p class="eyebrow">GP-CORE</p>
+          <h1 id="gpTestTitle" tabindex="-1">Як ви почувалися протягом останнього тижня</h1>
+          <p>Оберіть одну відповідь для кожного твердження. Відповіді обробляються лише у вашому браузері й нікуди не передаються.</p>
+        </div>
+        <p class="progress-copy" id="progressCopy" aria-live="polite">Відповіді: 0 із 14</p>
+      </div>
+      <div class="progress-track" aria-hidden="true">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <p class="test-instruction"><strong>Відповідайте про останні сім днів.</strong> Оцініть, як часто ви відчували описане. Тут немає правильних або неправильних відповідей.</p>
+
+      <form id="gpCoreForm" novalidate>
+        <div id="gpCoreQuestions"></div>
+        <p class="form-error" id="formError" role="alert" hidden>Будь ласка, дайте відповідь на всі 14 запитань.</p>
+        <div class="form-actions">
+          <button class="primary-button" type="submit">Показати результат</button>
+        </div>
+      </form>
+      <p class="instrument-credit">ukr(fm) © CORE System Trust: <a href="https://www.coresystemtrust.org.uk/copyright.pdf" target="_blank" rel="noopener">умови використання</a></p>
+    </section>
+
+    <section class="result" id="gpCoreResult" aria-labelledby="resultTitle" aria-live="polite" hidden>
+      <p class="result-kicker">Результат GP-CORE</p>
+      <div class="result-top">
+        <div class="score-orb" aria-label="Середній бал">
+          <span class="score-value" id="scoreValue">0.00</span>
+          <span class="score-max">із 4</span>
+        </div>
+        <div>
+          <h2 id="resultTitle" tabindex="-1">Ваш середній бал</h2>
+          <p class="result-summary">Цей показник узагальнює відповіді про самопочуття та щоденне функціонування за останній тиждень.</p>
+        </div>
+      </div>
+      <div class="score-continuum" aria-hidden="true">
+        <div class="continuum-marker" id="scoreMarker"></div>
+        <div class="continuum-line"></div>
+        <div class="continuum-labels">
+          <span>0 — менше труднощів</span>
+          <span>2 — середина</span>
+          <span>4 — більше труднощів</span>
+        </div>
+      </div>
+      <div class="personal-meaning" aria-live="polite">
+        <p class="personal-meaning-label">Що означає ваш результат</p>
+        <h3 id="scoreMeaningTitle">Положення на шкалі</h3>
+        <p id="scoreMeaningText"></p>
+      </div>
+      <section class="result-focus" aria-labelledby="resultFocusTitle">
+        <h3 id="resultFocusTitle">На що звернути увагу</h3>
+        <p id="focusIntro"></p>
+        <ul id="focusList"></ul>
+      </section>
+      <div class="result-notice">
+        <strong>Що робити з результатом.</strong> Це не діагноз і не оцінка «норми». Якщо труднощі тривають, посилюються або помітно заважають життю, їх можна обговорити з психологом чи іншим відповідним фахівцем. Повторне проходження допоможе помітити зміни з часом.
+      </div>
+      <div class="result-actions">
+        <button class="secondary-button" id="restartGpCore" type="button">Пройти ще раз</button>
+      </div>
+      <p class="instrument-credit">ukr(fm) © CORE System Trust: <a href="https://www.coresystemtrust.org.uk/copyright.pdf" target="_blank" rel="noopener">умови використання</a></p>
+    </section>
+  </div>
+</main>
+
+<script src="assets/tests.js"></script>
+</body>
+</html>
